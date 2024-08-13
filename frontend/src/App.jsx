@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ListingPage from "./pages/ListingPage";
+import ListingDetailPage from "./pages/ListingDetailPage";
 
 function App() {
 
@@ -27,6 +28,10 @@ function App() {
                 <Route path="/signin" element={<SignIn/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/addListing" element={<ListingPage/>} />
+
+                <Route path="/listing" element={<ListingFilterPage/>}>
+                <Route path=":listingId" element={<ListingDetailPage/>}/>
+                </Route>
 
   
             </Routes>
