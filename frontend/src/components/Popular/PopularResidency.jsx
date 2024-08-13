@@ -1,11 +1,21 @@
 import "./PopularResidency.css"
 import PopResidency from "../PopResidency/PopResidency"
 import { popularResidencyList } from "../../utils/popular_residency"
+import { useState,useRef } from "react";
 
 const PopularResidency = ()=>{
+    const containerRef = useRef(null);
+    const [scrollAmount,setScrollAmount] = useState(0);
 
+  const scroll_left = ()=>{
+      setScrollAmount(prevAmount => {
+           const newAmount = prevAmount - 100;
+           containerRef.current.style.transform = `translateX(${newAmount}px)`;
+           return newAmount;
+      });
+  };
    
-    // console.log( popularResidencyList);
+   
     
   
     
@@ -17,7 +27,7 @@ const PopularResidency = ()=>{
                <center><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem illo tempora nostrum facere,<br/> assumenda neque dicta nihil pariatur quo harum, dolor voluptas. Dolores?</p></center> 
 
                <div className="scroll-btn">
-                <button className="left-btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button className="left-btn" onClick={scroll_left}><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
                 <button className="right-btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                </div>
 
