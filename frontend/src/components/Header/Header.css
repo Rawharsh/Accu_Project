@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#131110;
+    color: white;
+
+}
+
+.right img{
+   width: 100px;
+
+}
+
+
+.left ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+
+}
+
+.left ul li{
+    list-style: none;
+    padding: 10px;
+}
+

@@ -1,0 +1,38 @@
+
+.residency{
+    width: 300px;
+    height: 450px;
+    border-radius: 13px;
+    margin: 30px 10px;
+    box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.res-img img{
+    width: 300px;
+    height: 200px;
+}
+
+.info{
+    padding: 10px;
+}
+.price{
+    margin-top: 10px;
+    color: rgb(113, 113, 179);
+}
+
+.info p{
+    margin: 10px 0px;
+}
+
+.icons{
+    display: flex;
+   }
+
+.icons div{
+    margin: 0px 10px;
+ }
+
+ .icon i{
+    color: rgb(79, 79, 184);
+ }

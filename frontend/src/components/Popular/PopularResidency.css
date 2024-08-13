@@ -1,0 +1,38 @@
+.popular-div{
+    display: flex;
+    justify-content: center;
+}
+.popular-residency{
+   
+    width: 80%;
+    border: 1px solid red;
+}
+
+.popular-residency h1{
+    margin: 10px;
+}
+
+.popularScroll{
+    display: flex;
+    overflow-x: scroll;
+
+}
+
+.popularScroll::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll-btn{
+    display: flex;
+    justify-content:end;
+    gap: 5px;
+   
+}
+
+.scroll-btn button{
+    border-radius: 10px;
+    border: none;
+}
+
+
+
