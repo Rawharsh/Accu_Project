@@ -102,24 +102,62 @@ const ListingDetail = () => {
            </div>
 
            <div className="agentProfileData">
-                  <p class="contact office">
+                  <p className="contact office">
                     <span>Office </span>
+                    <span className='spanSymbol'>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
                     <span>93375485</span>
+                    </span>
                   </p>
-                  <p class="contact mobile">
+                  <p className="contact mobile">
                     <span>Mobile </span>
-                    <span>84584583</span>							
+                    <span className='spanSymbol'>
+                    <i class="fa fa-phone" aria-hidden="true"> </i>
+                    <span>84584583</span>
+                    </span>						
                   </p>
-                  <p class="contact whatsapp">
+                  <p className="contact whatsapp">
                         <span>WhatsApp </span>
+                        <span className='spanSymbol'>
+                        <i class="fa fa-whatsapp" aria-hidden="true"> </i>
                         <span>737564375</span>
+                        </span>
                   </p>
 
-                  <p class="contact email">
+                  <p className="contact email">
                         <span>Email </span>
+                        
+                        <span className='spanSymbol'>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
                         <span>melissa@gmail.com</span>
+                        </span>
                     </p>
            </div>
+        </div>
+        <div className="agentQueryForm">
+              <form action="">
+              <p class="agentQueryFormWrapper">
+                            <label for="agentQueryFormName"/>
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input id="agentQueryFormName" type="text" name="name" placeholder="Name" className="required rh-ultra-field" title="* Please provide your name"/>
+              </p>
+              <p class="agentQueryFormWrapper">
+                            <label for="agentQueryFormEmail"/>
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <input id="agentQueryFormEmail" type="text" name="name" placeholder="E-mail" className="required rh-ultra-field" title="* Please provide your name"/>
+              </p>
+              <p class="agentQueryFormWrapper">
+                            <label for="agentQueryFormPhone"/>
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <input id="agentQueryFormPhone" type="text" name="name" placeholder="Phone" className="required rh-ultra-field" title="* Please provide your name"/>
+              </p>
+
+              <p class="agentQueryFormWrapper">
+                            <label for="agentQueryFormMessage"></label>
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            <textarea id="agentQueryFormMessage" cols="40" rows="6" name="message" placeholder="Message" class="required rh-ultra-field valid" title="* Please provide your message"></textarea>
+              </p>
+              </form>
         </div>
 
       </div>
