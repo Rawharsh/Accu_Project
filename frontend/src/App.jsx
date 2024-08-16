@@ -8,12 +8,10 @@ import Header from "./components/Header/Header";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ListingPage from "./pages/ListingPage";
-<<<<<<< HEAD
 import Footer from "./components/Footer/Footer";
 import Employee from "./pages/employee";
-=======
+import ListingFilterPage from "./pages/ListingFilterPage";
 import ListingDetailPage from "./pages/ListingDetailPage";
->>>>>>> b99e75dd55f1e75471bde064dbbd21b7c136f1c3
 
 function App() {
 

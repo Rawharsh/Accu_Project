@@ -2,6 +2,7 @@ import "./PopularResidency.css"
 import PopResidency from "../PopResidency/PopResidency"
 import { popularResidencyList } from "../../utils/popular_residency"
 import { useState,useRef } from "react";
+import { Link } from "react-router-dom";
 
 const PopularResidency = ()=>{
     const containerRef = useRef(null);
@@ -31,9 +32,9 @@ const PopularResidency = ()=>{
                 <button className="right-btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                </div>
 
-               <div className="popularScroll"> { popularResidencyList.map((residency)=> (
+               <div className="popularScroll"> {  popularResidencyList.map((residency)=> (
                 // console.log(residency)
-                <PopResidency residencyData = {residency} />
+                <Link to={`/listing/${residency.id}`}><PopResidency residencyData = {residency} /></Link>
               ))}</div>
             
                 
