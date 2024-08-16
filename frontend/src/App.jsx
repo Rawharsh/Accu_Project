@@ -8,6 +8,8 @@ import Header from "./components/Header/Header";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import ListingPage from "./pages/ListingPage";
+import Footer from "./components/Footer/Footer";
+import Employee from "./pages/employee";
 
 function App() {
 
@@ -27,10 +29,12 @@ function App() {
                 <Route path="/signin" element={<SignIn/>}/>
                 <Route path="/signup" element={<SignUp/>}/>
                 <Route path="/addListing" element={<ListingPage/>} />
+                <Route path="/employee" element={<Employee/>} />
 
   
             </Routes>
           </Suspense>
+        <Footer/>
         </BrowserRouter>
   );
 }
