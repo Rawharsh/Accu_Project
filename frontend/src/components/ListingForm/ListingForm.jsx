@@ -1,6 +1,39 @@
+import React, { useState, useRef } from "react";
 import "./ListingForm.css";
 
 const ListingForm = () => {
+  const [selectedFiles, setSelectedFiles] =useState([]);
+  //render the images
+  const [uploadedImages, setUploadedImages] = useState([]);
+  const fileInputRef = useRef(null); // Create a reference for the file input
+
+  const handleChooseFiles = () => {
+    // console.log("Choose Files button clicked");
+    if (fileInputRef.current) {
+      fileInputRef.current.click(); // Trigger the click on the file input
+    }
+  };
+
+  const handleFileChange = (event) => {
+    setSelectedFiles(Array.from(event.target.files));
+  };
+
+  const handleUpload = () => {
+    if (selectedFiles.length > 0) {
+      const newImages = selectedFiles.map(file => ({id:URL.createObjectURL(file),file}
+    ));
+      setUploadedImages([...uploadedImages, ...newImages]);
+      setSelectedFiles([]); // Clear selected files after upload
+    } else {
+      console.log("No files selected");
+    }
+  };
+
+  const handleDeleteImage = (id) => {
+    setUploadedImages(uploadedImages.filter(image => image.id !== id));
+    URL.revokeObjectURL(id); // Revoke the object URL to free up memory
+  };
+
   return (
     <div className="root">
       <div className="main-container">
@@ -20,23 +53,39 @@ const ListingForm = () => {
             </p>
             <div className="file">
               <div className="chosen">
-                <button type="button" className="choose">Choose Files</button>
-                <p>No File Chosen</p>
+                <button type="button" className="choose" onClick={handleChooseFiles}>
+                  Choose Files
+                </button>
+                <p>{selectedFiles ? `${selectedFiles.length} file(s) chosen` : "No File Chosen"}</p>
+                <input
+                  type="file"
+                  ref={fileInputRef} // Assign the reference to the file input
+                  style={{ display: "none" }}
+                  multiple
+                  onChange={handleFileChange}
+                />
               </div>
-              <button type="button" className="upload">Upload</button>
+              <button type="button" className="upload" onClick={handleUpload} >Upload</button>
             </div>
-            {/* <button type="submit" className="tap">CREATE LISTING</button> */}
+            <div className="uploaded-images">
+              {uploadedImages.map((image, index) => (
+               <div key={index} className="uploaded-image">
+               <img src={image.id} alt={`Uploaded ${index + 1}`} style={{ width: "100px", margin: "10px" }} />
+               <button onClick={() => handleDeleteImage(image.id)} className="delete-button">Delete</button>
+             </div>
+           ))}
+            
+          </div>
           </div>
         </form>
-
         <div className="level">
           <div className="space" id="select">
             <input type="checkbox" id="rent" name="listingType" />
             <label htmlFor="rent">Rent</label>
             <input type="checkbox" id="sell" name="listingType" />
             <label htmlFor="sell">Sell</label>
-            <input type="checkbox" id="offer" name="listingType" />
-            <label htmlFor="offer">Offer</label>
+            <input type="checkbox" id="other" name="listingType" />
+            <label htmlFor="offer">Other</label>
           </div>
 
           <div className="category">
@@ -68,6 +117,7 @@ const ListingForm = () => {
           </div>
           <button type="submit" className="tap">CREATE LISTING</button>
         </div>
+
       </div>
     </div>
   );

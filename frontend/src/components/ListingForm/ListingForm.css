@@ -2,251 +2,280 @@
 
 /* Root container */
 .root {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-  }
-  
-  /* Main container */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+/* Main container */
+.main-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Heading */
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333333;
+}
+
+/* Form section */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Create section */
+.create {
+  margin-top: 20px;
+}
+
+.create p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.choose,
+.upload,
+.tap {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.choose:hover,
+.upload:hover,
+.tap:hover {
+  background-color: #0056b3;
+}
+.chosen{
+  width: 50%;
+  padding: 5px;
+  display: flex;
+  border: 2px solid gray;
+  gap: 10px;
+}
+
+.chosen p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Level section */
+.level {
+  margin-top: 20px;
+}
+
+.level div {
+  margin-bottom: 20px;
+}
+
+/* Checkbox groups */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.category h4,
+.amenities h4,
+.price h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333333;
+}
+
+/* Price input */
+.price input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.uploaded-image {
+  display: inline-block;
+  position: relative;
+  margin: 10px;
+  text-align: center; /*Center content horizontally */
+}
+
+.uploaded-image img {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin-bottom: 5px;/* Add some space between the image and the button*/
+}
+
+.uploaded-image button {
+  width: 100px; /* Make button the same width as the image */
+  padding: 10px;
+  text-align: center;
+  background-color: #3954ec;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; 
+}
+
+.uploaded-image button:hover {
+  background-color: #ff3333; 
+}
+ 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
   .main-container {
-    width: 100%;
-    max-width: 800px;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    padding: 15px;
   }
-  
-  /* Heading */
+
   .heading {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333333;
+    font-size: 20px;
   }
-  
-  /* Form section */
-  .placeholder {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
+
   .form input,
   .form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Create section */
-  .create {
-    margin-top: 20px;
-  }
-  
-  .create p {
     font-size: 14px;
-    margin-bottom: 10px;
+    padding: 8px;
   }
-  
+
+  .create p {
+    font-size: 12px;
+  }
+
   .file {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
   }
+
   
-  .choose,
   .upload,
   .tap {
-    padding: 10px 15px;
-    background-color: rgba(51, 65, 85, 0.884);
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .choose:hover,
-  .upload:hover,
-  .tap:hover {
-    background-color: rgba(51, 65, 85, 0.884);
-  }
-  .chosen{
-    width: 50%;
-    padding: 5px;
-    display: flex;
-    border: 2px solid gray;
-    gap: 10px;
-  }
-  
-  .chosen p {
+    width: 100%;
     margin-top: 10px;
-    font-size: 14px;
   }
-  
-  /* Level section */
-  .level {
-    margin-top: 20px;
-  }
-  
-  .level div {
-    margin-bottom: 20px;
-  }
-  
-  /* Checkbox groups */
-  input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
+
   label {
-    font-size: 14px;
-    margin-right: 20px;
+    font-size: 12px;
   }
-  
+
   .category h4,
   .amenities h4,
   .price h4 {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #333333;
+    font-size: 14px;
   }
-  
-  /* Price input */
-  .price input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-  }
-  
-  /* Media Queries for Responsive Design */
-  @media (max-width: 768px) {
-    .main-container {
-      padding: 15px;
-    }
-  
-    .heading {
-      font-size: 20px;
-    }
-  
-    .form input,
-    .form textarea {
-      font-size: 14px;
-      padding: 8px;
-    }
-  
-    .create p {
-      font-size: 12px;
-    }
-  
-    .file {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    
-    .upload,
-    .tap {
+  .choose {
       width: 100%;
-      margin-top: 10px;
-    }
-  
-    label {
+      height: 30px;
+      text-align: center;
+  }
+  .chosen{
+      height: 40px;
+  }
+  .chosen p{
+      width: 90%;
+      font-size: 15px;
+      
+  }
+}
+@media (max-width:586px){
+  .chosen{
+      width: 60%;
+  }
+}
+@media (max-width:500px){
+  .chosen{
+      width:80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 18px;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .create p {
+    font-size: 10px;
+  }
+
+  .file {
+    align-items: flex-start;
+  }
+
+  .choose,
+  .upload,
+  .tap {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 10px;
+  }
+
+  .category h4,
+  .amenities h4,
+  .price h4 {
+    font-size: 12px;
+  }
+  .chosen p{
       font-size: 12px;
-    }
-  
-    .category h4,
-    .amenities h4,
-    .price h4 {
-      font-size: 14px;
-    }
-    .choose {
-        width: 100%;
-        height: 30px;
-        text-align: center;
-    }
-    .chosen{
-        height: 40px;
-    }
-    .chosen p{
-        width: 90%;
-        font-size: 15px;
-        
-    }
+      margin-top: 5px;
   }
-  @media (max-width:586px){
-    .chosen{
-        width: 60%;
-    }
+} 
+@media (max-width:405px){
+  .chosen{
+      width: 70%;
   }
-  @media (max-width:500px){
-    .chosen{
-        width:80%;
-    }
+  .choose{
+      width: 100%;
   }
-  
-  @media (max-width: 480px) {
-    .heading {
-      font-size: 18px;
-    }
-  
-    .form input,
-    .form textarea {
-      font-size: 12px;
-      padding: 6px;
-    }
-  
-    .create p {
+  .chosen p{
+      font-size: 11px;
+  }
+} 
+@media (max-width:355px){
+  .chosen{
+      width: 90%;
+  }
+  .chosen p{
       font-size: 10px;
-    }
-  
-    .file {
-      align-items: flex-start;
-    }
-  
-    .choose,
-    .upload,
-    .tap {
-      padding: 8px;
-      font-size: 14px;
-    }
-  
-    label {
-      font-size: 10px;
-    }
-  
-    .category h4,
-    .amenities h4,
-    .price h4 {
-      font-size: 12px;
-    }
-    .chosen p{
-        font-size: 12px;
-        margin-top: 5px;
-    }
-  } 
-  @media (max-width:405px){
-    .chosen{
-        width: 70%;
-    }
-    .choose{
-        width: 100%;
-    }
-    .chosen p{
-        font-size: 11px;
-    }
-  } 
-  @media (max-width:355px){
-    .chosen{
-        width: 90%;
-    }
-    .chosen p{
-        font-size: 10px;
-    }
   }
+}
